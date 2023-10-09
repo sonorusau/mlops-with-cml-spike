@@ -1,0 +1,2 @@
+Average Training Loss: 0.6404
+Average Validation Loss: 0.4395

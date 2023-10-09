@@ -21,6 +21,15 @@ def generate_plot(epochs, train_loss, val_loss):
     plt.savefig('plot.png')
     plt.close()
 
+def write_metrics(train_loss, val_loss):
+    average_train_loss = np.mean(train_loss)
+    average_val_loss = np.mean(val_loss)
+    
+    with open("metrics.txt", "w") as f:
+        f.write(f"Average Training Loss: {average_train_loss:.4f}\n")
+        f.write(f"Average Validation Loss: {average_val_loss:.4f}\n")
+
 if __name__ == "__main__":
     train_model(epochs, train_loss, val_loss)
     generate_plot(epochs, train_loss, val_loss)
+    write_metrics(train_loss, val_loss)
